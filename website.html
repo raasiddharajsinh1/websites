@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Tour Packages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        .tour {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .tour-card {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .tour-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .tour-card h3 {
+            margin-top: 10px;
+        }
+        .tour-card p {
+            color: #666;
+        }
+        .testimonial {
+            background-color: #eee;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .testimonial h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .testimonial .quote {
+            text-align: center;
+            font-style: italic;
+        }
+        .testimonial .author {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .contact-form {
+            margin-top: 30px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .contact-form button:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Explore the Best Tour Packages</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#tours">Our Tours</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to the Best Tour Agency</h2>
+        <p>We offer the best travel experiences with amazing tours across the globe. Discover your dream destinations with us!</p>
+    </section>
+
+    <section id="tours">
+        <h2>Our Popular Tours</h2>
+        <div class="tour">
+            <div class="tour-card">
+                <img src="tour1.jpg" alt="Tour 1">
+                <h3>Paris Adventure</h3>
+                <p>Experience the charm of Paris with guided tours, wine tasting, and sightseeing.</p>
+            </div>
+            <div class="tour-card">
+                <img src="tour2.jpg" alt="Tour 2">
+                <h3>Rome Highlights</h3>
+                <p>Explore the rich history of Rome, from the Colosseum to the Vatican City.</p>
+            </div>
+            <div class="tour-card">
+                <img src="tour3.jpg" alt="Tour 3">
+                <h3>Tokyo Wonderland</h3>
+                <p>Discover the beauty and culture of Tokyo with a perfect blend of tradition and modernity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonial">
+        <h2>What Our Clients Say</h2>
+        <p class="quote">"This was the best vacation I've ever had! The tour was perfectly organized, and the guides were amazing."</p>
+        <p class="author">– Sarah J.</p>
+    </section>
+
+    <section id="contact" class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
