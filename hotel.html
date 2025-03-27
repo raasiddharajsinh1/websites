@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 18px; /* Changed the font size of the entire body */
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px; /* Changed the header font size */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #home {
+            background-color: #f2f2f2;
+        }
+
+        #rooms {
+            background-color: #e0e0e0;
+        }
+
+        #about {
+            background-color: #f2f2f2;
+        }
+
+        #contact {
+            background-color: #e0e0e0;
+        }
+        
+        #Facilities{
+            background-color: #e0e0e0;
+        }
+
+        .room {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px; /* Adjusted the room text font size */
+        }
+
+        .room img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .room p {
+            font-size: 18px;
+        }
+
+        .facility {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .facility img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .facility h3 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .facility p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .book-now-btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .book-now-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            .room {
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .room {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Hotel RAA Paradise</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#Facilities">Facilities</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <section id="home">
+        <div class="container">
+            <h1>Welcome to Hotel RAA Paradise</h1>
+            <p>Experience luxury like never before with our premium rooms and world-class service.</p>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms">
+        <div class="container">
+            <h2>Our Rooms</h2>
+            <div class="room">
+                <a href="laxuries.html" target="_blank">
+                    <img src="room.jpg" alt="Luxury suite room with king bed and balcony view" width="400" height="auto">
+                </a>
+                <p>Luxury Suite - $200 per night</p>
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a> <!-- Added Book Now button -->
+            </div>
+            <div class="room">
+                <a href="standarad.html" target="_blank">
+                    <img src="room2.jpg" alt="Standard room with a queen bed and city view" width="400" height="auto">
+                </a>
+                <p>Standard Room - $100 per night</p>
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a> <!-- Added Book Now button -->
+            </div>
+            <div class="room">
+                <a href="economy3.html" target="_blank">
+                    <img src="room3.jpg" alt="Economy room with a single bed" width="400" height="auto">
+                </a>
+                <p>Economy Room - $50 per night</p>
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a> <!-- Added Book Now button -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Hotel RAA Paradise has been offering world-class service for over 10 years, providing guests with the utmost comfort and luxury. Our commitment is to ensure that your stay is a memorable and relaxing experience. We pride ourselves on our luxurious rooms, exceptional customer service, and a wide range of facilities.</p>
+            
+            <h3>Our Best Hotel Attributes:</h3>
+            <ul>
+                <li><strong>Luxury and Comfort:</strong> Every room is designed with the finest amenities for a superior and relaxing experience.</li>
+                <li><strong>Prime Location:</strong> Nestled in the heart of the city, our hotel is close to major tourist attractions, shopping centers, and entertainment hubs.</li>
+                <li><strong>Personalized Service:</strong> Our dedicated staff is available 24/7 to cater to all your needs, ensuring a hassle-free stay.</li>
+                <li><strong>Spacious Rooms:</strong> Enjoy well-appointed rooms with ample space, modern decor, and breathtaking views.</li>
+                <li><strong>Eco-friendly Initiatives:</strong> We take pride in our green initiatives and sustainable practices, helping to reduce our environmental footprint.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="Facilities">
+        <h3>Hotel Facilities:</h3>
+        <div class="facility">
+            <img src="spool.jpg" alt="Outdoor swimming pool" />
+            <h3>Outdoor Swimming Pool</h3>
+            <p>Enjoy a refreshing swim or relax poolside with a drink in hand at our stunning outdoor pool.</p>
+        </div>
+        <div class="facility">
+            <img src="restaurant1.jpg" alt="World-class restaurant" />
+            <h3>World-class Dining</h3>
+            <p>Our in-house restaurant serves a variety of international and local delicacies prepared by top chefs.</p>
+        </div>
+        <div class="facility">
+            <img src="spa1.jpg" alt="Luxurious spa services" />
+            <h3>Spa and Wellness Center</h3>
+            <p>Indulge in a wide range of rejuvenating treatments at our luxurious spa for ultimate relaxation.</p>
+        </div>
+
+        <div class="facility">
+            <img src="gym1.jpg" alt="State-of-the-art gym" />
+            <h3>Fully-equipped Gym</h3>
+            <p>Keep fit during your stay with our state-of-the-art fitness center equipped with modern workout machines.</p>
+        </div>
+        <div class="facility">
+            <img src="Meeting.jpg" alt="Conference rooms" />
+            <h3>Meeting and Event Rooms</h3>
+            <p>Our well-equipped meeting and event spaces are perfect for conferences, seminars, and private events.</p>
+        </div>
+        <div class="facility">
+            <img src="Shuttle1.jpg" alt="Airport shuttle service" />
+            <h3>Airport Shuttle</h3>
+            <p>Enjoy complimentary shuttle service to and from the airport for all our guests' convenience.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>For bookings or inquiries, please reach out to us at:</p>
+            <p>Email: RAAhotel@gmail.com</p>
+            <p>Phone: 123-456-7890</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Hotel RAA Paradise. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
