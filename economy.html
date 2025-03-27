@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delicious local food served fresh to your door!">
+    <title>Local Food Hub</title>
+    <link rel="stylesheet" href="1.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Local Food Hub Logo" />
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Banner Section -->
+    <section id="home" class="banner">
+        <h1>Welcome to Local Food Hub</h1>
+        <p>Fresh, healthy, and locally sourced food delivered to your doorstep!</p>
+        <button onclick="scrollToMenu()">Explore Our Menu</button>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <h2>Our Menu</h2>
+        <div class="food-items">
+            <div class="food-item">
+                <img src="pizza.jpg" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>A delicious combination of fresh ingredients topped with cheese!</p>
+                <span>$12.99</span>
+            </div>
+            <div class="food-item">
+                <img src="burger.jpg" alt="Burger">
+                <h3>Burger</h3>
+                <p>Juicy beef patty with fresh lettuce, tomatoes, and pickles.</p>
+                <span>$8.99</span>
+            </div>
+            <div class="food-item">
+                <img src="pasta.jpg" alt="Pasta">
+                <h3>Pasta</h3>
+                <p>Italian-style pasta with a rich tomato sauce.</p>
+                <span>$10.99</span>
+            </div>
+            <div class="food-item">
+                <img src="salad.jpg" alt="Salad">
+                <h3>Salad</h3>
+                <p>Freshly chopped vegetables with a tangy vinaigrette.</p>
+                <span>$7.99</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are a local food delivery service dedicated to bringing fresh, healthy, and delicious meals from local farms to your door. Our mission is to support local businesses while providing you with the best food experience possible.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Customers Are Saying</h2>
+        <div class="testimonial">
+            <p>"The pizza was amazing! I can tell the ingredients are super fresh. Will definitely order again!"</p>
+            <span>- Emily R.</span>
+        </div>
+        <div class="testimonial">
+            <p>"Fast delivery and great food quality. Love supporting local businesses!"</p>
+            <span>- Mark T.</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or would like to place an order, get in touch with us!</p>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Local Food Hub | All Rights Reserved</p>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </footer>
+</body>
+
+</html>
+
