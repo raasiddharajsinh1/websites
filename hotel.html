@@ -11,7 +11,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-size: 18px; /* Changed the font size of the entire body */
+            font-size: 18px;
+            background-color: #f4f4f4;
         }
 
         header {
@@ -19,12 +20,43 @@
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 24px; /* Changed the header font size */
+            font-size: 24px;
         }
+        /* Styling for Hotel Details Section */
+.hotel-details {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.hotel-details h3 {
+    font-size: 24px;
+    color: #2C3E50;
+    margin-bottom: 15px;
+}
+
+.hotel-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hotel-details ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.hotel-details ul li strong {
+    color: #3498db;
+}
 
         nav ul {
             list-style-type: none;
             padding: 0;
+            text-align: center;
         }
 
         nav ul li {
@@ -43,26 +75,6 @@
             text-align: center;
         }
 
-        #home {
-            background-color: #f2f2f2;
-        }
-
-        #rooms {
-            background-color: #e0e0e0;
-        }
-
-        #about {
-            background-color: #f2f2f2;
-        }
-
-        #contact {
-            background-color: #e0e0e0;
-        }
-        
-        #Facilities{
-            background-color: #e0e0e0;
-        }
-
         .room {
             display: inline-block;
             width: 30%;
@@ -70,7 +82,7 @@
             padding: 20px;
             background-color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            font-size: 16px; /* Adjusted the room text font size */
+            font-size: 16px;
         }
 
         .room img {
@@ -92,10 +104,6 @@
         .container {
             width: 80%;
             margin: 0 auto;
-        }
-
-        .room p {
-            font-size: 18px;
         }
 
         .facility {
@@ -120,6 +128,94 @@
             font-size: 16px;
             color: #555;
         }
+        /* Styling for Nearby Hotels Section */
+        /* Styling for Hotel Menu Section */
+#hotel-menu {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.menu-item {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.menu-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-item {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-item {
+        width: 100%;
+    }
+}
+
+#nearby-hotels {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.nearby-hotel {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.nearby-hotel h3 {
+    font-size: 22px;
+    color: #2C3E50;
+}
+
+.nearby-hotel p {
+    font-size: 16px;
+    color: #555;
+}
+
+.nearby-hotel .book-now-btn {
+    margin-top: 10px;
+    background-color: #2C3E50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.nearby-hotel .book-now-btn:hover {
+    background-color: #3498db;
+}
+
+/* Google Map Section */
+#hotel-location iframe {
+    border-radius: 8px;
+}
 
         .book-now-btn {
             display: inline-block;
@@ -148,6 +244,93 @@
                 width: 100%;
             }
         }
+
+        /* Styling for Login Section */
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #2C3E50;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        /* Flexbox for Contact Us and Sign In section side by side */
+        .contact-signin-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .contact-container,
+        .signin-container {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-container h2,
+        .signin-container h2 {
+            color: #2C3E50;
+        }
+
+        .contact-container p,
+        .signin-container p {
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -161,19 +344,33 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#rooms">Rooms</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="#Facilities">Facilities</a></li>
+                <li><a href="#hotel-menu">hotel-menu</a></li>
+                <li><a href="#nearby-hotels">nearby-hotels</a></li>
+                <li><a href="#signin">Signin</a></li>
             </ul>
         </nav>
     </header>
 
+   
     <!-- Main Section -->
-    <section id="home">
-        <div class="container">
-            <h1>Welcome to Hotel RAA Paradise</h1>
-            <p>Experience luxury like never before with our premium rooms and world-class service.</p>
+<section id="home">
+    <div class="container">
+        <h1>Welcome to Hotel RAA Paradise</h1>
+        <p>Experience luxury like never before with our premium rooms and world-class service.</p>
+        
+        <!-- Added hotel details section -->
+        <div class="hotel-details">
+            <h3>Hotel Information</h3>
+            <ul>
+                <li><strong>Total Rooms:</strong> 120 Rooms</li>
+                <li><strong>Total Facilities:</strong> 15+</li>
+                <li><strong>Hotel Safe:</strong> Available 24/7 for your peace of mind</li>
+                <li><strong>Address:</strong> 123 Paradise Road, City, Country</li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Rooms Section -->
     <section id="rooms">
@@ -181,24 +378,24 @@
             <h2>Our Rooms</h2>
             <div class="room">
                 <a href="laxuries.html" target="_blank">
-                    <img src="room.jpg" alt="Luxury suite room with king bed and balcony view" width="400" height="auto">
+                    <img src="room.jpg" alt="Luxury suite room with king bed and balcony view">
                 </a>
                 <p>Luxury Suite - $200 per night</p>
-                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a> <!-- Added Book Now button -->
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
             </div>
             <div class="room">
                 <a href="standarad.html" target="_blank">
-                    <img src="room2.jpg" alt="Standard room with a queen bed and city view" width="400" height="auto">
+                    <img src="room2.jpg" alt="Standard room with a queen bed and city view">
                 </a>
                 <p>Standard Room - $100 per night</p>
-                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a> <!-- Added Book Now button -->
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
             </div>
             <div class="room">
                 <a href="economy3.html" target="_blank">
-                    <img src="room3.jpg" alt="Economy room with a single bed" width="400" height="auto">
+                    <img src="room3.jpg" alt="Economy room with a single bed">
                 </a>
                 <p>Economy Room - $50 per night</p>
-                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a> <!-- Added Book Now button -->
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
             </div>
         </div>
     </section>
@@ -208,15 +405,6 @@
         <div class="container">
             <h2>About Us</h2>
             <p>Hotel RAA Paradise has been offering world-class service for over 10 years, providing guests with the utmost comfort and luxury. Our commitment is to ensure that your stay is a memorable and relaxing experience. We pride ourselves on our luxurious rooms, exceptional customer service, and a wide range of facilities.</p>
-            
-            <h3>Our Best Hotel Attributes:</h3>
-            <ul>
-                <li><strong>Luxury and Comfort:</strong> Every room is designed with the finest amenities for a superior and relaxing experience.</li>
-                <li><strong>Prime Location:</strong> Nestled in the heart of the city, our hotel is close to major tourist attractions, shopping centers, and entertainment hubs.</li>
-                <li><strong>Personalized Service:</strong> Our dedicated staff is available 24/7 to cater to all your needs, ensuring a hassle-free stay.</li>
-                <li><strong>Spacious Rooms:</strong> Enjoy well-appointed rooms with ample space, modern decor, and breathtaking views.</li>
-                <li><strong>Eco-friendly Initiatives:</strong> We take pride in our green initiatives and sustainable practices, helping to reduce our environmental footprint.</li>
-            </ul>
         </div>
     </section>
 
@@ -238,7 +426,6 @@
             <h3>Spa and Wellness Center</h3>
             <p>Indulge in a wide range of rejuvenating treatments at our luxurious spa for ultimate relaxation.</p>
         </div>
-
         <div class="facility">
             <img src="gym1.jpg" alt="State-of-the-art gym" />
             <h3>Fully-equipped Gym</h3>
@@ -255,14 +442,92 @@
             <p>Enjoy complimentary shuttle service to and from the airport for all our guests' convenience.</p>
         </div>
     </section>
+    <!-- Hotel Menu Section -->
+<section id="hotel-menu">
+    <div class="container">
+        <h2>today's Hotel special dish</h2>
+        <div class="menu-item">
+            <img src="Signature Dish.jfif" alt="Delicious meal" />
+            <h3>Signature Dish</h3>
+            <p>A delectable dish prepared with the finest ingredients. $25</p>
+        </div>
+        <div class="menu-item">
+            <img src="Fresh Garden Salad.jfif" alt="Healthy Salad" />
+            <h3>Fresh Garden Salad</h3>
+            <p>Freshly prepared with seasonal vegetables, perfect for a light and healthy meal. $15</p>
+        </div>
+        <div class="menu-item">
+            <img src="cake.jfif" alt="Dessert" />
+            <h3>Chocolate Lava Cake</h3>
+            <p>Indulge in a warm, gooey chocolate cake served with vanilla ice cream. $10</p>
+        </div>
+        <div class="menu-item">
+            <img src="Fresh Fruit Juices.jfif" alt="Beverages" />
+            <h3>Fresh Fruit Juices</h3>
+            <p>Refresh yourself with our freshly squeezed juices made from organic fruits. $8</p>
+        </div>
+        <div class="menu-item">
+            <img src="Traditional Indian Thali.jfif" alt="Traditional Dish" />
+            <h3>Traditional Indian Thali</h3>
+            <p>A classic Indian platter with a variety of flavors, served with rice, bread, and curries. $40</p>
+        </div>
+    </div>
+</section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>For bookings or inquiries, please reach out to us at:</p>
-            <p>Email: RAAhotel@gmail.com</p>
-            <p>Phone: 123-456-7890</p>
+  <!-- Nearby Hotels Section -->
+<section id="nearby-hotels">
+    <div class="container">
+        <h2>Nearby Hotels in Bhavnagar</h2>
+        <div class="nearby-hotel">
+            <h3>Nilambag Palace Hotel</h3>
+            <p>A heritage hotel set in a former palace, featuring traditional architecture, lush gardens, and a tennis court.</p>
+            <a href="https://www.nilambagpalace.com" target="_blank" class="book-now-btn">Visit Website</a>
+        </div>
+        <div class="nearby-hotel">
+            <h3>Hotel iscon</h3>
+            <p>Known for its moderhttps://www.fernhotels.com/n facilities and comfortable accommodations, suitable for both business and leisure travelers.</p>
+            <a href=" https://www.fernhotels.com" target="_blank" class="book-now-btn">Visit Website</a>
+        </div>
+        <div class="nearby-hotel">
+            <h3>The Basil Park</h3>
+            <p>Offers well-furnished rooms, a garden, and is located near the city center for easy access to local sites.</p>
+            <a href="http://www.thebasilpark.com" target="_blank" class="book-now-btn">Visit Website</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Optionally, you can add a Google Map -->
+<section id="hotel-location">
+    <div class="container">
+        <h2>Hotel Location</h2>
+        <p>See our location and nearby attractions:</p>
+        <iframe src="https://www.google.com/maps/embed/v1/place?q=Hotel+RAA+Paradise&key=YOUR_GOOGLE_MAPS_API_KEY" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+
+    <!-- Con Sign In Section -->
+    <section id="signin">
+        <div class="contact-signin-container">
+            <div class="contact-container">
+                <h2>Contact Us</h2>
+                <p>For bookings or inquiries, please reach out to us at:</p>
+                <p>Email: RAAhotel@gmail.com</p>
+                <p>Phone: 123-456-7890</p>
+            </div>
+
+            <div class="signin-container">
+                <h2>Hotel Sign In</h2>
+                <form action="/login" method="POST">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <button type="submit" class="login-button">Sign In</button>
+                </form>
+                <div class="forgot-password">
+                    <a href="/forgot-password">Forgot Password?</a>
+                </div>
+            </div>
         </div>
     </section>
 
