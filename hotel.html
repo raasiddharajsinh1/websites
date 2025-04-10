@@ -23,6 +23,26 @@
             font-size: 24px;
         }
         /* Styling for Hotel Details Section */
+    .sidebar {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 10000;
+}
+
+.sidebar-content {
+    padding: 20px;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
 .hotel-details {
     background-color: white;
     padding: 20px;
@@ -331,13 +351,48 @@
         .signin-container p {
             font-size: 16px;
         }
+
+    .call-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    z-index: 9999;
+  }
+
+  @media (max-width: 768px) {
+    .call-button {
+      display: block;
+    }
+  }
+
+    
+#booking-bar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
     </style>
 </head>
+
 
 <body>
 
     <!-- Header Section -->
     <header>
+        <button id="open-register-sidebar" style="position: absolute; top: 25px; right: 20px; padding: 8px 16px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Register
+        </button>
+        
         <h1>Hotel RAA Paradise</h1>
         <nav>
             <ul>
@@ -351,8 +406,82 @@
             </ul>
         </nav>
     </header>
+    <!-- Registration Sidebar -->
+<div id="register-sidebar" class="sidebar">
+    <div class="sidebar-content">
+        <h2>Register</h2>
+        <form id="register-form">
+            <input type="text" id="reg-name" placeholder="Full Name" required class="input-field">
+            <input type="email" id="reg-email" placeholder="Email" required class="input-field">
+            <input type="password" id="reg-password" placeholder="Password" required class="input-field">
+            <button type="submit" class="login-button">Register</button>
+        </form>
+        <button id="close-sidebar" style="margin-top: 10px; background-color: #e74c3c;">Close</button>
+    </div>
+</div>
+<script>
+    // Sidebar open/close
+    const sidebar = document.getElementById('register-sidebar');
+    const openBtn = document.getElementById('open-register-sidebar');
+    const closeBtn = document.getElementById('close-sidebar');
 
-   
+    openBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+    });
+
+    // Register form handling
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('reg-name').value;
+        const email = document.getElementById('reg-email').value;
+        const password = document.getElementById('reg-password').value;
+
+        if (name && email && password) {
+            // Save to localStorage (for demo)
+            localStorage.setItem('registeredUser', JSON.stringify({ name, email }));
+            alert('Registration successful! You can now sign in.');
+            sidebar.classList.remove('open');
+        } else {
+            alert('Please fill all fields.');
+        }
+    });
+</script>
+
+    <script>
+    window.addEventListener('scroll', function() {
+        const bookingBar = document.getElementById("booking-bar");
+        if (window.scrollY > 200) {
+          bookingBar.classList.add("sticky");
+        } else {
+          bookingBar.classList.remove("sticky");
+        }
+      });
+    </script>
+      
+    <!-- Include flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    
+    <input id="checkin" placeholder="Check-in Date">
+    <input id="checkout" placeholder="Check-out Date">
+    
+    <script>
+      flatpickr("#checkin", {
+        minDate: "today",
+        onChange: function(selectedDates, dateStr, instance) {
+          checkoutPicker.set('minDate', dateStr);
+        }
+      });
+    
+      const checkoutPicker = flatpickr("#checkout", {
+        minDate: "today"
+      });
+    </script>
+    
     <!-- Main Section -->
 <section id="home">
     <div class="container">
@@ -371,6 +500,26 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Rooms Section -->
     <section id="rooms">
@@ -473,7 +622,30 @@
         </div>
     </div>
 </section>
-
+<div class="testimonial-slider">
+    <div class="slide">"Awesome stay!" – Sarah</div>
+    <div class="slide">"Loved the food!" – Mike</div>
+    <div class="slide">"Very comfy beds!" – Emma</div>
+  </div>
+  
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
+  
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.style.display = idx === i ? "block" : "none";
+      });
+    }
+  
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 3000);
+  
+    showSlide(index);
+  </script>
+  
   <!-- Nearby Hotels Section -->
 <section id="nearby-hotels">
     <div class="container">
@@ -507,6 +679,11 @@
 </section>
 
 
+<a href="tel:+1234567890" class="call-button">Call Now</a>
+
+
+
+
     <!-- Con Sign In Section -->
     <section id="signin">
         <div class="contact-signin-container">
@@ -530,7 +707,78 @@
             </div>
         </div>
     </section>
-
+    <script>
+        // Check login status on page load
+        let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    
+        // Sticky booking bar on scroll
+        window.addEventListener('scroll', function () {
+            const bookingBar = document.getElementById("booking-bar");
+            if (bookingBar) {
+                bookingBar.classList.toggle("sticky", window.scrollY > 200);
+            }
+        });
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize flatpickr
+            const checkin = flatpickr("#checkin", {
+                minDate: "today",
+                onChange: function (selectedDates, dateStr, instance) {
+                    if (checkout) {
+                        checkout.set('minDate', dateStr);
+                    }
+                }
+            });
+    
+            const checkout = flatpickr("#checkout", {
+                minDate: "today"
+            });
+    
+            // Handle Book Now buttons
+            const bookButtons = document.querySelectorAll(".book-now-btn");
+    
+            bookButtons.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const isExternal = btn.href && btn.href.startsWith("http");
+                    if (!isLoggedIn && !isExternal) {
+                        e.preventDefault();
+                        alert("Please sign in to book a room.");
+                        window.location.href = "#signin";
+                    }
+                });
+            });
+    
+            // Testimonial slider
+            const slides = document.querySelectorAll(".slide");
+            let index = 0;
+    
+            function showSlide(i) {
+                slides.forEach((slide, idx) => {
+                    slide.style.display = idx === i ? "block" : "none";
+                });
+            }
+    
+            if (slides.length > 0) {
+                showSlide(index);
+                setInterval(() => {
+                    index = (index + 1) % slides.length;
+                    showSlide(index);
+                }, 3000);
+            }
+    
+            // Simulated login
+            const loginForm = document.querySelector('#signin form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    localStorage.setItem("isLoggedIn", "true");
+                    isLoggedIn = true;
+                    alert("Successfully signed in!");
+                    window.location.href = "#rooms";
+                });
+            }
+        });
+    </script>
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2025 Hotel RAA Paradise. All Rights Reserved.</p>
