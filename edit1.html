@@ -1,159 +1,928 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Room Details</title>
+    <meta name="description" content="Hotel RAA Paradise offers luxury rooms, world-class dining, 
+    and top-tier facilities in Bhavnagar. Book your stay now!">
+
+    <title>Hotel Paradise</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 18px;
             background-color: #f4f4f4;
-            color: #333;
-            padding: 20px;
         }
-        .room-details {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 400px;
-            margin: auto;
-        }
-        h2 {
-            text-align: center;
-            color: #007BFF;
-        }
-        .room-info {
-            margin-bottom: 15px;
-        }
-        .room-info label {
-            font-weight: bold;
-        }
-        .room-info p {
-            margin: 5px 0;
-        }
-        .button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
+
+        header {
+            background-color: #333;
             color: white;
-            border: none;
-            border-radius: 5px;
+            padding: 20px;
             text-align: center;
-            font-size: 16px;
-            cursor: pointer;
+            font-size: 24px;
         }
-        .button:hover {
-            background-color: #0056b3;
-        }
-        .scroll-gallery-container {
-    padding: 40px 20px;
-    background-color: #fff;
-}
-
-.room-scroll-gallery {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 20px;
-    padding: 10px 0;
-}
-
-.room-scroll-gallery img {
-    flex: 0 0 auto;
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Lightbox styles */
-.lightbox {
-    display: none;
+        /* Styling for Hotel Details Section */
+    .sidebar {
     position: fixed;
-    z-index: 9999;
+    right: -400px;
     top: 0;
-    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    z-index: 10000;
+
+   .sidebar.open {
+    right: 1;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Nav links default desktop */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-links li {
+    padding: 15px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+
+}
+.hero {
+    background-image: url('hotelhd.jfif'); /* Replace with your own banner image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #fff;
-    object-fit: contain;
-    animation: fadeIn 0.3s ease-in-out;
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero-btn:hover {
+    background-color: #2980b9;
+}
+
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-btn {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
 }
 
 
+
+
+
+.hotel-details {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.hotel-details h3 {
+    font-size: 24px;
+    color: #2C3E50;
+    margin-bottom: 15px;
+}
+
+.hotel-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hotel-details ul li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.hotel-details ul li strong {
+    color: #3498db;
+}
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .room {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        
+
+
+        .room img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .facility {
+            display: inline-block;
+            width: 30%;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .facility img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .facility h3 {
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .facility p {
+            font-size: 16px;
+            color: #555;
+        }
+        /* Styling for Nearby Hotels Section */
+        /* Styling for Hotel Menu Section */
+#hotel-menu {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.menu-item {
+    display: inline-block;
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.menu-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .menu-item {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .menu-item {
+        width: 100%;
+    }
+}
+
+#nearby-hotels {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.nearby-hotel {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.nearby-hotel h3 {
+    font-size: 22px;
+    color: #2C3E50;
+}
+
+.nearby-hotel p {
+    font-size: 16px;
+    color: #555;
+}
+
+.nearby-hotel .book-now-btn {
+    margin-top: 10px;
+    background-color: #2C3E50;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.nearby-hotel .book-now-btn:hover {
+    background-color: #3498db;
+}
+
+/* Google Map Section */
+#hotel-location iframe {
+    border-radius: 8px;
+}
+
+        .book-now-btn {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .book-now-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            .room {
+                width: 45%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .room {
+                width: 100%;
+            }
+        }
+
+        /* Styling for Login Section */
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: #2C3E50;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .login-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button:hover {
+            background-color: #2980b9;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        /* Flexbox for Contact Us and Sign In section side by side */
+        .contact-signin-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .contact-container,
+        .signin-container {
+            flex: 1;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-container h2,
+        .signin-container h2 {
+            color: #2C3E50;
+        }
+
+        .contact-container p,
+        .signin-container p {
+            font-size: 16px;
+        }
+
+    .call-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    z-index: 9999;
+  }
+
+  @media (max-width: 768px) {
+    .call-button {
+      display: block;
+    }
+  }
+
+    
+#booking-bar.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
 
     </style>
 </head>
+
+
 <body>
-   
-    <div class="scroll-gallery-container">
-        <h2>🏨 Explore Our Luxury Room</h2>
-        <div class="room-scroll-gallery">
-            <img src="laxuries2.jfif" alt="Luxury Room">
-            <img src="laxuries3.jfif" alt="Luxury Room">
-            <img src="laxuries4.jfif" alt="Luxury Room">
-            <img src="laxuries5.jfif" alt="Luxury Room">
-            <img src="laxuries6.jfif" alt="Luxury Room">
-        </div>
+
+    <!-- Header Section -->
+    <header>
+        <button id="open-register-sidebar" style="position: absolute; top: 25px; right: 20px; padding: 8px 16px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Register
+        </button>
+        
+        <h1>Hotel RAA Paradise</h1>
+        <nav>
+            <div class="nav-container">
+              <div class="logo">Hotel RAA Paradise</div>
+              <div class="hamburger" id="hamburger">&#9776;</div>
+              <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#Facilities">Facilities</a></li>
+                <li><a href="#hotel-menu">Menu</a></li>
+                <li><a href="#nearby-hotels">Nearby Hotels</a></li>
+                <li><a href="#signin">Signin</a></li>
+              </ul>
+            </div>
+          </nav>
+          
+    </header>
+    <!-- Registration Sidebar -->
+<div id="register-sidebar" class="sidebar">
+    <div class="sidebar-content">
+        <h2>Register</h2>
+        <form id="register-form">
+            <input type="text" id="reg-name" placeholder="Full Name" required class="input-field">
+            <input type="email" id="reg-email" placeholder="Email" required class="input-field">
+            <input type="password" id="reg-password" placeholder="Password" required class="input-field">
+            <button type="submit" class="login-button">Register</button>
+        </form>
+        <button id="close-sidebar" style="margin-top: 10px; background-color: #e74c3c;">Close</button>
     </div>
-    <div class="room-details">
-        <h2>Luxury Hotel Room</h2>
-        <div class="room-info">
-            <label>Room Type:</label>
-            <p>Luxury Room</p>
-        </div>
-        <div class="room-info">
-            <label>Bed Type:</label>
-            <p>Double Bed</p>
-        </div>
-        <div class="room-info">
-            <label>Smoking:</label>
-            <p>Attached Smoking Zone</p>
-        </div>
-        <div class="room-info">
-            <label>Facilities:</label>
-            <p>Air Conditioning, Wi-Fi, TV, Refrigerator, 24/7 Service</p>
-        </div>
-        <button class="button">Book Now</button>
-    </div>
+</div>
+<script>
+    // Sidebar open/close
+    const sidebar = document.getElementById('register-sidebar');
+    const openBtn = document.getElementById('open-register-sidebar');
+    const closeBtn = document.getElementById('close-sidebar');
+
+    openBtn.addEventListener('click', () => {
+        sidebar.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+    });
+
+    // Register form handling
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('reg-name').value;
+        const email = document.getElementById('reg-email').value;
+        const password = document.getElementById('reg-password').value;
+
+        if (name && email && password) {
+            // Save to localStorage (for demo)
+            localStorage.setItem('registeredUser', JSON.stringify({ name, email }));
+            alert('Registration successful! You can now sign in.');
+            sidebar.classList.remove('open');
+        } else {
+            alert('Please fill all fields.');
+        }
+    });
+</script>
+
     <script>
-        // Lightbox functionality
-        const galleryImages = document.querySelectorAll('.room-scroll-gallery img');
-        const lightbox = document.createElement('div');
-        lightbox.classList.add('lightbox');
-        document.body.appendChild(lightbox);
+    window.addEventListener('scroll', function() {
+        const bookingBar = document.getElementById("booking-bar");
+        if (window.scrollY > 200) {
+          bookingBar.classList.add("sticky");
+        } else {
+          bookingBar.classList.remove("sticky");
+        }
+      });
+    </script>
+      
+    <!-- Include flatpickr -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     
-        const lightboxImg = document.createElement('img');
-        lightbox.appendChild(lightboxImg);
+    <input id="checkin" placeholder="Check-in Date">
+    <input id="checkout" placeholder="Check-out Date">
     
-        galleryImages.forEach(img => {
-            img.addEventListener('click', () => {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = img.src;
-            });
-        });
+    <script>
+      flatpickr("#checkin", {
+        minDate: "today",
+        onChange: function(selectedDates, dateStr, instance) {
+          checkoutPicker.set('minDate', dateStr);
+        }
+      });
     
-        lightbox.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
+      const checkoutPicker = flatpickr("#checkout", {
+        minDate: "today"
+      });
     </script>
     
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Welcome to Hotel RAA Paradise</h1>
+        <p>Where Luxury Meets Comfort</p>
+        <a href="#rooms" class="hero-btn">Explore Rooms</a>
+      </div>
+    </div>
+  
+  
+  
+  
+        <!-- Added hotel details section -->
+        <div class="hotel-details">
+            <h3>Hotel Information</h3>
+            <ul>
+                <li><strong>Total Rooms:</strong> 120 Rooms</li>
+                <li><strong>Total Facilities:</strong> 15+</li>
+                <li><strong>Hotel Safe:</strong> Available 24/7 for your peace of mind</li>
+                <li><strong>Address:</strong> 123 Paradise Road, City, Country</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+    
+    
+    <section id="rooms">
+        <div class="container">
+            <h2>Our Rooms</h2>
+            <div class="room">
+                <a href="laxuries.html" target="_blank">
+                    <img src="room.jpg" alt="Luxury suite room with king bed and balcony view">
+                </a>
+                <p>Luxury Suite - $200 per night</p>
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
+            </div>
+            <div class="room">
+                <a href="standarad.html" target="_blank">
+                    <img src="room2.jpg" alt="Standard room with a queen bed and city view">
+                </a>
+                <p>Standard Room - $100 per night</p>
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
+            </div>
+            <div class="room">
+                <a href="economy3.html" target="_blank">
+                    <img src="room3.jpg" alt="Economy room with a single bed">
+                </a>
+                <p>Economy Room - $50 per night</p>
+                <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Hotel RAA Paradise has been offering world-class service for over 10 years, providing guests with the utmost comfort and luxury. Our commitment is to ensure that your stay is a memorable and relaxing experience. We pride ourselves on our luxurious rooms, exceptional customer service, and a wide range of facilities.</p>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="Facilities">
+        <h3>Hotel Facilities:</h3>
+        <div class="facility">
+            <img src="spool.jpg" alt="Outdoor swimming pool" />
+            <h3>Outdoor Swimming Pool</h3>
+            <p>Enjoy a refreshing swim or relax poolside with a drink in hand at our stunning outdoor pool.</p>
+        </div>
+        <div class="facility">
+            <img src="restaurant1.jpg" alt="World-class restaurant" />
+            <h3>World-class Dining</h3>
+            <p>Our in-house restaurant serves a variety of international and local delicacies prepared by top chefs.</p>
+        </div>
+        <div class="facility">
+            <img src="spa1.jpg" alt="Luxurious spa services" />
+            <h3>Spa and Wellness Center</h3>
+            <p>Indulge in a wide range of rejuvenating treatments at our luxurious spa for ultimate relaxation.</p>
+        </div>
+        <div class="facility">
+            <img src="gym1.jpg" alt="State-of-the-art gym" />
+            <h3>Fully-equipped Gym</h3>
+            <p>Keep fit during your stay with our state-of-the-art fitness center equipped with modern workout machines.</p>
+        </div>
+        <div class="facility">
+            <img src="Meeting.jpg" alt="Conference rooms" />
+            <h3>Meeting and Event Rooms</h3>
+            <p>Our well-equipped meeting and event spaces are perfect for conferences, seminars, and private events.</p>
+        </div>
+        <div class="facility">
+            <img src="Shuttle1.jpg" alt="Airport shuttle service" />
+            <h3>Airport Shuttle</h3>
+            <p>Enjoy complimentary shuttle service to and from the airport for all our guests' convenience.</p>
+        </div>
+    </section>
+    <!-- Hotel Menu Section -->
+<section id="hotel-menu">
+    <div class="container">
+        <h2>today's Hotel special dish</h2>
+        <div class="menu-item">
+            <img src="Signature Dish.jfif" alt="Delicious meal" />
+            <h3>Signature Dish</h3>
+            <p>A delectable dish prepared with the finest ingredients. $25</p>
+        </div>
+        <div class="menu-item">
+            <img src="Fresh Garden Salad.jfif" alt="Healthy Salad" />
+            <h3>Fresh Garden Salad</h3>
+            <p>Freshly prepared with seasonal vegetables, perfect for a light and healthy meal. $15</p>
+        </div>
+        <div class="menu-item">
+            <img src="cake.jfif" alt="Dessert" />
+            <h3>Chocolate Lava Cake</h3>
+            <p>Indulge in a warm, gooey chocolate cake served with vanilla ice cream. $10</p>
+        </div>
+        <div class="menu-item">
+            <img src="Fresh Fruit Juices.jfif" alt="Beverages" />
+            <h3>Fresh Fruit Juices</h3>
+            <p>Refresh yourself with our freshly squeezed juices made from organic fruits. $8</p>
+        </div>
+        <div class="menu-item">
+            <img src="Traditional Indian Thali.jfif" alt="Traditional Dish" />
+            <h3>Traditional Indian Thali</h3>
+            <p>A classic Indian platter with a variety of flavors, served with rice, bread, and curries. $40</p>
+        </div>
+    </div>
+</section>
+<div class="testimonial-slider">
+    <div class="slide">"Awesome stay!" – Sarah</div>
+    <div class="slide">"Loved the food!" – Mike</div>
+    <div class="slide">"Very comfy beds!" – Emma</div>
+  </div>
+  
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
+  
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.style.display = idx === i ? "block" : "none";
+      });
+    }
+  
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 3000);
+  
+    showSlide(index);
+  </script>
+  
+  <!-- Nearby Hotels Section -->
+<section id="nearby-hotels">
+    <div class="container">
+        <h2>Nearby Hotels in Bhavnagar</h2>
+        <div class="nearby-hotel">
+            <h3>Nilambag Palace Hotel</h3>
+            <p>A heritage hotel set in a former palace, featuring traditional architecture, lush gardens, and a tennis court.</p>
+            <a href="https://www.nilambagpalace.com" target="_blank" class="book-now-btn">Visit Website</a>
+        </div>
+        <div class="nearby-hotel">
+            <h3>Hotel iscon</h3>
+            <p>Known for its moderhttps://www.fernhotels.com/n facilities and comfortable accommodations, suitable for both business and leisure travelers.</p>
+            <a href=" https://www.fernhotels.com" target="_blank" class="book-now-btn">Visit Website</a>
+        </div>
+        <div class="nearby-hotel">
+            <h3>The Basil Park</h3>
+            <p>Offers well-furnished rooms, a garden, and is located near the city center for easy access to local sites.</p>
+            <a href="http://www.thebasilpark.com" target="_blank" class="book-now-btn">Visit Website</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Optionally, you can add a Google Map -->
+<section id="hotel-location">
+    <div class="container">
+        <h2>Hotel Location</h2>
+        <p>See our location and nearby attractions:</p>
+        <iframe src="https://www.google.com/maps/embed/v1/place?q=Hotel+RAA+Paradise&key=YOUR_GOOGLE_MAPS_API_KEY" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</section>
+
+
+<a href="tel:+1234567890" class="call-button">Call Now</a>
+
+
+
+
+    <!-- Con Sign In Section -->
+    <section id="signin">
+        <div class="contact-signin-container">
+            <div class="contact-container">
+                <h2>Contact Us</h2>
+                <p>For bookings or inquiries, please reach out to us at:</p>
+                <p>Email: RAAhotel@gmail.com</p>
+                <p>Phone: 123-456-7890</p>
+            </div>
+
+            <div class="signin-container">
+                <h2>Hotel Sign In</h2>
+                <form action="/login" method="POST">
+                    <input type="text" name="username" class="input-field" placeholder="Username" required>
+                    <input type="password" name="password" class="input-field" placeholder="Password" required>
+                    <button type="submit" class="login-button">Sign In</button>
+                </form>
+                <div class="forgot-password">
+                    <a href="/forgot-password">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Check login status on page load
+        let isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    
+        // Sticky booking bar on scroll
+        window.addEventListener('scroll', function () {
+            const bookingBar = document.getElementById("booking-bar");
+            if (bookingBar) {
+                bookingBar.classList.toggle("sticky", window.scrollY > 200);
+            }
+        });
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            // Initialize flatpickr
+            const checkin = flatpickr("#checkin", {
+                minDate: "today",
+                onChange: function (selectedDates, dateStr, instance) {
+                    if (checkout) {
+                        checkout.set('minDate', dateStr);
+                    }
+                }
+            });
+    
+            const checkout = flatpickr("#checkout", {
+                minDate: "today"
+            });
+    
+            // Handle Book Now buttons
+            const bookButtons = document.querySelectorAll(".book-now-btn");
+    
+            bookButtons.forEach(btn => {
+                btn.addEventListener("click", (e) => {
+                    const isExternal = btn.href && btn.href.startsWith("http");
+                    if (!isLoggedIn && !isExternal) {
+                        e.preventDefault();
+                        alert("Please sign in to book a room.");
+                        window.location.href = "#signin";
+                    }
+                });
+            });
+    
+            // Testimonial slider
+            const slides = document.querySelectorAll(".slide");
+            let index = 0;
+    
+            function showSlide(i) {
+                slides.forEach((slide, idx) => {
+                    slide.style.display = idx === i ? "block" : "none";
+                });
+            }
+    
+            if (slides.length > 0) {
+                showSlide(index);
+                setInterval(() => {
+                    index = (index + 1) % slides.length;
+                    showSlide(index);
+                }, 3000);
+            }
+    
+            // Simulated login
+            const loginForm = document.querySelector('#signin form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    localStorage.setItem("isLoggedIn", "true");
+                    isLoggedIn = true;
+                    alert("Successfully signed in!");
+                    window.location.href = "#rooms";
+                });
+            }
+        });
+    </script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+      
+        hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('open');
+        });
+      </script>
+      
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Hotel RAA Paradise. All Rights Reserved.</p>
+    </footer>
+
 </body>
+
 </html>
