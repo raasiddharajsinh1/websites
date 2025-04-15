@@ -9,6 +9,97 @@
 
     <title>Hotel Paradise</title>
     <style>
+        /* General section background styles */
+section {
+    background-color: #f4f4f4; /* Default background */
+    padding: 60px 20px;
+    text-align: center;
+    position: relative; /* For overlay */
+}
+
+section.bg-hero {
+    background-image: url('hotelhd.jfif'); /* Replace with your own banner image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.bg-hero .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section.bg-hero .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+/* Specific section backgrounds */
+#rooms {
+    background-image: url('rooms-bg.jpg'); /* Replace with your own rooms background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+#about {
+    background-image: url('tokiyo.jpg'); /* Replace with your own about section background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+#Facilities {
+    background-image: url('paris.jpg'); /* Replace with your own facilities section background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+#hotel-menu {
+    background-image: url('laxuries5.jfif.jpg'); /* Replace with your own menu section background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+#nearby-hotels {
+    background-image: url('laxuries2.jfif'); /* Replace with your own nearby hotels section background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+#hotel-location {
+    background-image: url('laxuries3.jfif'); /* Replace with your own location section background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
+#signin {
+    background-image: url('room.jpg'); /* Replace with your own signin section background image */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 20px;
+}
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
