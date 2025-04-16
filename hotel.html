@@ -26,7 +26,7 @@
             font-size: 24px;
         }
         /* Styling for Hotel Details Section */
-    .sidebar {
+        .sidebar {
     position: fixed;
     right: -400px;
     top: 0;
@@ -36,12 +36,16 @@
     box-shadow: -2px 0 10px rgba(0,0,0,0.2);
     transition: right 0.3s ease;
     z-index: 10000;
-
-   .sidebar.open {
-    right: 1;
 }
 
+/* ✅ Move this OUTSIDE and fix the right value */
+.sidebar.open {
+    right: 0;
 }
+
+
+
+
 .hero {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1950&q=80') no-repeat center center;
@@ -161,6 +165,11 @@
             text-decoration: none;
             font-size: 18px;
         }
+        #about {
+    background: linear-gradient(to right, #ffffff, #f0f8ff);
+}
+
+
 
         section {
             padding: 60px 20px;
@@ -176,7 +185,27 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             font-size: 16px;
         }
-        
+        #rooms .container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+}
+
+#rooms .room {
+    flex: 0 0 auto;
+    width: 300px;
+    margin-right: 20px;
+}
+#rooms .container::-webkit-scrollbar {
+    height: 8px;
+}
+#rooms .container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
 
 
         .room img {
@@ -471,7 +500,7 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#rooms">Rooms</a></li>
+            
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#Facilities">Facilities</a></li>
                 <li><a href="#hotel-menu">hotel-menu</a></li>
@@ -499,13 +528,14 @@
     const openBtn = document.getElementById('open-register-sidebar');
     const closeBtn = document.getElementById('close-sidebar');
 
+   
     openBtn.addEventListener('click', () => {
-        sidebar.classList.add('open');
-    });
+    sidebar.classList.add('open');
+});
 
-    closeBtn.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-    });
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open');
+});
 
     // Register form handling
     document.getElementById('register-form').addEventListener('submit', function(e) {
@@ -611,15 +641,24 @@
                 <a href="payment.html" class="book-now-btn" target="_blank">Book Now</a>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about">
+
+    </section>
+    <section id="about" style="background: linear-gradient(to right, #f9f9f9, #e6f0ff); 
+    padding: 60px 20px;">
         <div class="container">
-            <h2>About Us</h2>
-            <p>Hotel RAA Paradise has been offering world-class service for over 10 years, providing guests with the utmost comfort and luxury. Our commitment is to ensure that your stay is a memorable and relaxing experience. We pride ourselves on our luxurious rooms, exceptional customer service, and a wide range of facilities.</p>
+            <h2 style="color: #2C3E50;">Experience the Essence of Paradise</h2>
+            <p style="font-size: 18px; color: #444;">
+                Nestled in the heart of Bhavnagar, Hotel RAA Paradise is more than just a place to stay—it's a journey into elegance, comfort, and personalized hospitality.
+                <br><br>
+                For over a decade, we’ve redefined luxury with stunning accommodations, fine dining experiences, and impeccable service. Whether you're here for business, a romantic getaway, or a family vacation, our team is committed to creating memorable moments just for you.
+                <br><br>
+                Step into paradise. Let us make your stay unforgettable.
+            </p>
         </div>
     </section>
+    
+  
 
     <!-- Facilities Section -->
     <section id="Facilities">
